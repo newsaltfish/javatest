@@ -23,12 +23,15 @@ public class main extends Thread {
 	}
 
 	public static void main(String args[]) {
-		// ExecutorService service = Executors.newFixedThreadPool(4);
-		// for (int i = 0; i < 10; i++) {
-		//// service.execute(new main(i));
-		// service.submit(new main(i));
-		//// service.execute(command);
-		// }
+		ExecutorService service = Executors.newFixedThreadPool(4);
+		for (int i = 0; i < 10; i++) {
+			// service.execute(new main(i));
+			// service.submit(new main(i));
+			// java Lambda º¯ÊýÊ½±à³Ì
+			service.execute((Runnable) () -> {
+				System.out.println("hi");
+			});
+		}
 		// System.out.println("submit finish");
 		//// service.shutdown();
 		// List<Integer> rules = new ArrayList<Integer>();
@@ -57,10 +60,10 @@ public class main extends Thread {
 		// }
 
 		// System.out.println(rules);
-		Double s = 1.23;
-	    Integer a=3;
-	    Object o=s*a;
-		System.out.println(o.getClass());
+		// Double s = 1.23;
+		// Integer a=3;
+		// Object o=s*a;
+		// System.out.println(o.getClass());
 	}
 
 }
