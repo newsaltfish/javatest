@@ -1,14 +1,12 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class main extends Thread {
+public class Test extends Thread {
 	private int index;
 
-	public main(int i) {
+	public Test(int i) {
 		this.index = i;
 	}
 
@@ -25,9 +23,9 @@ public class main extends Thread {
 	public static void main(String args[]) {
 		ExecutorService service = Executors.newFixedThreadPool(4);
 		for (int i = 0; i < 10; i++) {
-			// service.execute(new main(i));
-			// service.submit(new main(i));
-			// java Lambda º¯ÊýÊ½±à³Ì
+			// service.execute(new Test(i));
+			// service.submit(new Test(i));
+			// 
 			service.execute((Runnable) () -> {
 				System.out.println("hi");
 			});
